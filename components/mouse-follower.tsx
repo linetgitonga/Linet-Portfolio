@@ -29,7 +29,7 @@ export function MouseFollower() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-40 mix-blend-difference"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
@@ -41,7 +41,7 @@ export function MouseFollower() {
       </motion.div>
 
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-50"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-40"
         animate={{
           x: mousePosition.x - 1,
           y: mousePosition.y - 1,
