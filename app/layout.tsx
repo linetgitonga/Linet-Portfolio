@@ -3,28 +3,91 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/lib/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
-import { FloatingNav } from "@/components/floating-nav"
+
+const siteUrl = "https://linetgitonga.me"
+const siteTitle = "Linet Gitonga — Software Developer & CS Student"
+const siteDescription =
+  "Portfolio of Linet Gitonga — software developer and computer science student building full-stack and AI-powered web applications."
 
 export const metadata: Metadata = {
-  title: "Linet Gitonga - Software Developer Portfolio",
-  description:
-    "Full-stack software developer specializing in Django, React, and AI-powered solutions for African communities.",
-  generator: "v0.dev",
+  title: siteTitle,
+  description: siteDescription,
+  keywords: [
+    "software developer",
+    "computer science student",
+    "portfolio",
+    "full-stack developer",
+    "Django developer",
+    "React developer",
+  ],
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "Linet Gitonga",
+    images: [
+      {
+        url: `${siteUrl}/placeholder-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "Linet Gitonga",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    site: "@linetgitonga",
+  },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+function JsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Linet Muthoni Gitonga",
+    url: siteUrl,
+    sameAs: [
+      "https://github.com/linetgitonga",
+      "https://www.linkedin.com/in/linet-gitonga",
+    ],
+    jobTitle: "Software Developer",
+    description: siteDescription,
+  }
+
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: siteUrl,
+    name: "Linet Gitonga",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?s={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  }
+
+  return (
+    <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(websiteLd)}</script>
+    </>
+  )
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <link rel="canonical" href={siteUrl} />
+          <meta name="robots" content="index, follow" />
           {children}
           <Toaster />
-          {/* <FloatingNav /> */}
+          <JsonLd />
         </ThemeProvider>
       </body>
     </html>

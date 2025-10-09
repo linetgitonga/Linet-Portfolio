@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://linetgitonga.me/sitemap.xml
+
+# Block any staging or private folders if needed
+# Disallow: /admin/

@@ -172,8 +172,9 @@ export default function Portfolio() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-[600px]">
-              I build scalable web applications and AI-powered solutions with Django, React, and modern technologies,
-              focusing on impactful projects for African communities.
+              I’m a software developer and computer science student building full-stack and AI-powered web
+              applications. This portfolio showcases my projects with Django, React, and modern web technologies,
+              highlighting solutions for African communities and real-world impact.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
