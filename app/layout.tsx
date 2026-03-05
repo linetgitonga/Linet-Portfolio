@@ -5,16 +5,16 @@ import { ThemeProvider } from "@/lib/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 
 const siteUrl = "https://linetgitonga.me"
-const siteTitle = "Linet Gitonga — Software Developer & CS Student"
+const siteTitle = "Linet Gitonga — Software Developer & CS Graduate"
 const siteDescription =
-  "Portfolio of Linet Gitonga — software developer and computer science student building full-stack and AI-powered web applications."
+  "Portfolio of Linet Gitonga — software developer and computer science graduate building full-stack and AI-powered web applications."
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   keywords: [
     "software developer",
-    "computer science student",
+    "computer science graduate",
     "portfolio",
     "full-stack developer",
     "Django developer",
