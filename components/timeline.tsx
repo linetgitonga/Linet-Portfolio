@@ -59,10 +59,11 @@ export function Timeline() {
         >
           <motion.div
             className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pl-10" : "md:pr-10"}`}
-            initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+            initial={{ opacity: 1, x: index % 2 === 0 ? 50 : -50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 transition-all duration-300 hover:border-purple-500/50">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
@@ -83,8 +84,9 @@ export function Timeline() {
                 className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 z-10 flex items-center justify-center"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
+                animate={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
               >
                 <div className="w-2 h-2 rounded-full bg-white"></div>
               </motion.div>

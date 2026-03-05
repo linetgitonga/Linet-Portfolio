@@ -37,11 +37,13 @@ export function CreativeHero() {
     let targetX = 0
     let targetY = 0
 
-    window.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
       targetX = e.clientX - rect.left
       targetY = e.clientY - rect.top
-    })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
 
     // Particle class
     class Particle {
@@ -131,6 +133,7 @@ export function CreativeHero() {
     init()
 
     // Animation loop
+    let animationId: number
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -158,7 +161,7 @@ export function CreativeHero() {
         }
       }
 
-      requestAnimationFrame(animate)
+      animationId = requestAnimationFrame(animate)
     }
 
     animate()
@@ -166,17 +169,19 @@ export function CreativeHero() {
     window.addEventListener("resize", init)
 
     return () => {
+      cancelAnimationFrame(animationId)
       window.removeEventListener("resize", setCanvasDimensions)
       window.removeEventListener("resize", init)
+      window.removeEventListener("mousemove", handleMouseMove)
     }
   }, [theme])
 
   return (
     <motion.div
       className="w-full h-[400px] md:h-[500px] relative z-0"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.3 }}
     >
       <canvas ref={canvasRef} className="w-full h-full" style={{ display: "block" }} />
     </motion.div>
