@@ -25,13 +25,13 @@ const experiences = [
     description:
       "Completed intensive full-stack software development program covering modern web technologies, algorithms, and software engineering best practices.",
   },
-  {
-    title: "Bachelor of Science in Computer Science",
-    company: "Kenyatta University",
-    period: "September 2022 - Expected May 2026",
-    description:
-      "Pursuing Computer Science degree with focus on software engineering, data structures, algorithms, and AI. Active in tech communities and hackathons.",
-  },
+  // {
+  //   title: "Bachelor of Science in Computer Science",
+  //   company: "Kenyatta University",
+  //   period: "September 2022 - Expected May 2026",
+  //   description:
+  //     "Pursuing Computer Science degree with focus on software engineering, data structures, algorithms, and AI. Active in tech communities and hackathons.",
+  // },
   {
     title: "Full-Stack Software Development Certificate",
     company: "eMobilis Tech Institute",
