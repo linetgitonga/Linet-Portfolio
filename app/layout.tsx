@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     "Django developer",
     "React developer",
   ],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -41,6 +46,14 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     site: "@linetgitonga",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 }
 
